@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Puerta 18 - Reproductor</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container-fluid">
+            <img src="https://webapppuerta18.azurewebsites.net/wp-content/themes/puerta18/images/logo-puerta-18.svg" alt="Puerta 18" title="Puerta 18" class="p18img">
+        </div>
+    </nav>
+
+
+
+<!-- Free Videos: https://www.pexels.com/es-es/ -->
+<!-- Free Icons: https://icons8.com/icon/set/media-controls/fluency -->
+
+    <section>
+        <div class="container pt-5">
+
+            <div>
+                <!-- Reproducir cuando se hace click en el video -->
+                <video src="" onclick="reproducir()"></video>
+            </div>
+
+            <div class="d-flex justify-content-center p-2">
+                    <!-- Reproducir cuando se hace click en el icono -->
+                    <img class="play" src="icons/play.png" onclick="reproducir()">
+                    <img class="stop" src="icons/stop.png" onclick="finalizarReproduccion()">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Mi codigo -->
+    <script src='main.js'></script>
+</body>
+</html>
