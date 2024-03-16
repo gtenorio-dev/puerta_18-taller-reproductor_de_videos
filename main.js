@@ -1,14 +1,12 @@
 window.onload = inicio;
 
 
-
 var videos = []; // Lista de videos a reproducir
 var videoActual = 0; // Indice del video a reproducir
 var tiempoReproduccion = 2; // Segundos designados para reproducir un video
 var videoTag; // Etiqueta 'video' en el HTML
 var botonPlay; 
 var botonStop;
-
 
 
 function inicio() {
@@ -29,10 +27,8 @@ function inicio() {
 
 
     // Agregar Listeners (esuchar eventos)
-    videoTag.addEventListener("timeupdate", controlarSegundos, false);
+    // videoTag.addEventListener("timeupdate", controlarSegundos, false);
     videoTag.addEventListener('ended', siguienteVideo, false);
-
-
 }
 
 
@@ -66,12 +62,10 @@ function reproducir() {
 
     if(videoTag.paused) {
 
-        // Validacion para reproducir desde el inicio una vez que se reproducieron todos los videos
+        // TODO - Validacion para reproducir desde el inicio una vez 
+        // que se reproducieron todos los videos
         
-        if(videoActual >=  videos.length) {
-            videoActual = 0;
-            cargarVideo();
-        } 
+        
 
         videoTag.play();
         botonPlay.src = 'icons/pause.png';
@@ -81,7 +75,18 @@ function reproducir() {
     }
 }
 
-// TODO - Desafios
+// Desafios
+
+function siguienteVideo() {
+    videoActual++;
+    
+    // TODO
+
+}
+
+function finalizarReproduccion() {
+    // TODO
+}
 
 function controlarSegundos() {
     // TODO - Si el video llega a los segundos designados (variable tiempoReproduccion), 
@@ -89,29 +94,5 @@ function controlarSegundos() {
 
     console.log('Segundos reproducidos: ', videoTag.currentTime);
 
-
-    if (videoTag.currentTime >= tiempoReproduccion) {
-        siguienteVideo();
-    }
-}
-
-function siguienteVideo() {
-    videoActual++;
-    // cargarVideo();
-    // reproducir();
-
-    if (videoActual < videos.length) {
-        cargarVideo();
-        reproducir();
-    } else {
-        videoTag.pause();
-        botonPlay.src = 'icons/replay.png';
-    }
-}
-
-function finalizarReproduccion() {
-    videoTag.pause();
-    videoActual = 0;
-    cargarVideo();
-    botonPlay.src = 'icons/play.png';
+    // TODO
 }
